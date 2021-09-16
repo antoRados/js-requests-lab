@@ -81,6 +81,7 @@ const ohMy = () => {
                 .then(res => {
                     console.log(res.data)
                 })
+                .catch(err => {console.log(err)})
 }
 
 document.getElementById('animals-button').addEventListener('click', ohMy)
@@ -103,6 +104,7 @@ const repeatMyParam = () => {
     //YOUR CODE HERE
     return axios.get('http://localhost:3000/repeat/Hi-there!')
                 .then(res => (res.data))
+                .catch(err => {console.log(err)})
 
     let repeatTextElement = document.getElementById('repeat-text')
     repeatTextElement.textContent = res.data
@@ -132,6 +134,7 @@ const getCustomQuery = () => {
     axios
         .get('http://localhost:3000/query-test/?somesearch=random-data-back')
         .then(({data}) => console.log(data))
+        .catch(err => {console.log(err)})
 }
 document.getElementById('query-button').addEventListener('click', getCustomQuery)
 
